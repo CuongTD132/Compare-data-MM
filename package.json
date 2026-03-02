@@ -1,0 +1,19 @@
+{
+  "name": "promotion-mm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.10",
+    "typescript": "^5.5.3"
+  },
+  "private": true,
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "xlsx": "^0.18.5"
+  }
+}
