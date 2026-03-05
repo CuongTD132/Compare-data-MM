@@ -36,7 +36,7 @@ test("Compare Excel vs API totals (soft assert)", async () => {
                     } else {
                         // Promotion thường
                         // Lấy tổng theo đúng tên promotion
-                        excelTotal = storeMap.get(promo.name.toUpperCase()) ?? 0;
+                        excelTotal = storeMap.get(promo.name.trim().toUpperCase()) ?? 0;
                     }
                 }
 
