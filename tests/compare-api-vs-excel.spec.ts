@@ -61,7 +61,7 @@ test("Compare Excel vs API totals (soft assert)", async () => {
         for (const r of results) {
             allResults.push({
                 ...r,
-                status: r.excelTotal === r.apiTotal ? "MATCH" : "MISMATCH"
+                status: r.excelTotal === r.apiTotal ? "KHỚP" : "LỆCH"
             });
         }
     }
@@ -86,7 +86,7 @@ test("Compare Excel vs API totals (soft assert)", async () => {
 
     // Lọc ra các dòng không bị lệch
     const matchExcel = excelOutput.filter(
-        r => r.Status === "MATCH"
+        r => r.Status === "KHỚP"
     );
 
     // Ghi sheet chỉ chứa match
@@ -98,7 +98,7 @@ test("Compare Excel vs API totals (soft assert)", async () => {
 
     // Lọc ra các dòng bị lệch
     const mismatchExcel = excelOutput.filter(
-        r => r.Status === "MISMATCH"
+        r => r.Status === "LỆCH"
     );
 
     // Ghi sheet chỉ chứa mismatch

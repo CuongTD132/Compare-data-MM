@@ -4,6 +4,7 @@ import * as XLSX from "xlsx";
 export interface ExcelRow {
     storeCode: number;      // Lấy từ cột "Store Code"
     promotionName: string; // Lấy từ cột "Promotion VN"
+    articleCode: string;   // Lấy từ cột "Article Code"
 }
 
 // Hàm đọc file Excel
@@ -22,8 +23,8 @@ export function readExcel(path: string): ExcelRow[] {
     return rows.map(row => ({
         // Ép kiểu về number (tránh string)
         storeCode: Number(row["Store Code"]),
-
         // Trim để tránh lỗi space thừa
         promotionName: String(row["Sub promotion VN"]).trim().toUpperCase(),
+        articleCode: String(row["Article Code"]).trim().toUpperCase(),
     }));
 }
